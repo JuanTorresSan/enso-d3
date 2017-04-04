@@ -21,13 +21,14 @@ parseFloat("3.14");
 
 d3.select("svg")
 .selectAll("rect")
-.data([90, 340, 122, 80, 100, 10])
+.data([14, 68, 245, 430, 19, 100, 355])
 .enter()
 .append("rect")
-.attr("width", 20)
-.attr("height", function(d) {return d;})
+.attr("width", 29)
+.attr("height", function(d) {return d})
 .style("fill", "blue")
 .style("stroke", "red")
 .style("stroke-width", "1px")
 .style("opacity", .25)
-.attr("x", function(d,i) {return i * 20});
+.attr("x", function(d,i) {return i * 29;})
+.attr("y", function(d) {return 380 - d;});
