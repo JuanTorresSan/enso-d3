@@ -20,35 +20,35 @@ parseFloat("3.14");
 
 
 
-var data = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10, 8]; 
-    function render(data) { // <- B
-        // Enter
-        d3.select("body").selectAll("div.h-bar") 
-            .data(data) 
-            .enter() 
-                .append("div") 
-                    .attr("class", "h-bar")
-                .append("span"); 
-        // Update
-        d3.select("body").selectAll("div.h-bar")
-            .data(data) 
-                .style("width", function (d) { 
-                    return (d * 3) + "px";
-                })
-                .select("span") 
-                    .text(function (d) {
-                        return d;
-                    });
-                
-     
-        d3.select("body").selectAll("div.h-bar")
-            .data(data)
-            .exit() 
-                .remove();        
-    }
-    setInterval(function () { 
-        data.shift();
-        data.push(Math.round(Math.random() * 100));
-        render(data);
-    }, 1500);
-    render(data);
+
+     d3.select("svg")
+.append("line")
+.attr("x1", 20)
+.attr("y1", 20)
+.attr("x2",400)
+.attr("y2",400)
+.style("stroke", "black")
+.style("stroke-width","2px");
+d3.select("svg")
+.append("text")
+.attr("x",20)
+.attr("y",20)
+.text("HELLO");
+d3.select("svg")
+.append("circle")
+.attr("r", 20)
+.attr("cx",20)
+.attr("cy",20)
+.style("fill","red");
+d3.select("svg")
+.append("circle")
+.attr("r", 100)
+.attr("cx",400)
+.attr("cy",400)
+.style("fill","lightblue");
+d3.select("svg")
+.append("text")
+.attr("x",400)
+.attr("y",400)
+.text("WORLD");
+      
